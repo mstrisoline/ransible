@@ -1,0 +1,25 @@
+<h1>Listing host_vars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @host_vars.each do |host_var| %>
+      <tr>
+        <td><%= link_to 'Show', host_var %></td>
+        <td><%= link_to 'Edit', edit_host_var_path(host_var) %></td>
+        <td><%= link_to 'Destroy', host_var, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Host var', new_host_var_path %>

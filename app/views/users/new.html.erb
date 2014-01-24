@@ -1,0 +1,38 @@
+<center><h1>Ransible Registration</h1></center>
+
+<%= form_for @user do |f| %>
+  <div class="row" align="center">
+  <div class="push_three six columns">
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li class="warning alert"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "user@example.com", class: :input %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: nil, class: :input %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: nil, class: :input %>
+  </div>
+  <div class=row align="left">
+    <div class="six columns">
+      <div class="actions"><%= f.submit "  Register Now  ", class: "pretty medium primary btn"%></div>
+    </div>
+    <div class="six columns" align="right">
+      <div class="pretty medium info btn"><a href="<%= login_path %>">Back to Login</a></div>
+    </div>
+  </div>
+  </div>
+  </div>
+<% end %>

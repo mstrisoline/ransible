@@ -1,0 +1,29 @@
+
+<%= form_tag sessions_path do %>
+  <div class="row">
+    <center>
+    <div class="push_three six columns">
+    <% if flash[:error] %>
+      <li class="primary alert"><%= flash[:error] %></li>
+    <% end %>
+      <h2>Ransible Log In</h2>
+      <div class="field">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email], class: :input %>
+      </div>
+      <div class="field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, params[:password], placeholder: nil, class: :input %>
+      </div>
+      <div class=row align="left">
+        <div class="six columns">
+          <div class="actions"><%= submit_tag "  Log In  ", class: "pretty medium primary btn"%></div>
+        </div>
+        <div class="six columns" align="right">
+          <div class="pretty medium info btn"><a href="<%= new_users_path %>">Register</a></div>
+        </div>
+      </div>
+    </center>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<div class="row navbar pretty" id="nav">
+  <!-- Toggle for mobile navigation, targeting the <ul> -->
+  <a class="toggle" gumby-trigger="#nav > ul" href="#"><i class="icon-menu"></i></a>
+  <ul class="centered twelve columns">
+    <li class="label ">Current User: <%= current_user.email %></li>
+    <li><a href="#">Hosts</a></li>
+    <li><a href="#">Playbooks</a></li>
+    <li><a href="#">Roles</a></li>
+    <li><a href="#">Runs</a></li>
+    <li> 
+      <div class="default badge small">
+        <a href="#"><i class="icon-user"></i></a>
+      </div>
+    </li>
+    <li> 
+      <div class="warning badge small">
+        <a href="#"><i class="icon-tools"></i></a>
+      </div>
+    </li>
+    <li>
+      <div class="actions"><%= button_to "  Log Out  ", logout_path,  class: "medium danger btn"%></div>
+    </li>
+  </ul>
+</div>

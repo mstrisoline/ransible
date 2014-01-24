@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="twelve columns">
+    <h1>Hosts</h1>
+    <table class="rounded striped">
+      <thead>
+        <tr>
+          <th>Hostname</th>
+          <th>Group</th>
+          <th>Host Vars</th>
+          <th></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @hosts.each do |host| %>
+          <tr>
+            <td><%= host.name %></td>
+            <td><%= host.group.name %></td>
+            <td>
+              <ul align="left">
+                <% host.host_vars.each do |hostvar| %>
+                  <li>"<%= hostvar.key %>=<%= hostvar.value %>"<li>
+                <% end %>
+              </ul>
+            </td>
+            <td>
+              <div style="float:left">
+              <%= button_to '  Edit  ', host, method: :get, class: 'push_one pretty medium info btn' %>
+              </div>
+              <div style="float:right">
+              <%= button_to 'Delete', host, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pretty medium danger btn' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Host', new_host_path %>
